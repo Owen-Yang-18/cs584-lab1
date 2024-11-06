@@ -24,7 +24,7 @@ contract RockPaperScissors {
         registrationFee = _registrationFee;
     }
     
-    function createGame() public payable returns (uint256) {
+    function createGame(uint256 registrationFee) public payable returns (uint256) {
         require(msg.value == registrationFee, "Must send exact registration fee");
         
         uint256 gameId = gameCounter++;
